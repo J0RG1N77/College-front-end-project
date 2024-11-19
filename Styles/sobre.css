@@ -1,0 +1,151 @@
+/* Estilos globais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Tema claro (padrão) */
+body.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Tema escuro */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff; /* Define cor geral para o texto */
+}
+
+/* Garante que links e elementos específicos sejam afetados */
+body.dark-theme p, 
+body.dark-theme span {
+  color: #ffffff !important;
+}
+
+/* Estilo para hover de links no tema escuro */
+body.dark-theme a:hover {
+  color: #cccccc !important;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #d62828;
+  color: white;
+}
+
+/* Botão de alternar tema */
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.logo img {
+  max-width: 80px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #C62828;
+  border-radius: 4px;
+}
+
+.user-options {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style-type: none; /* Remove o marcador de lista */
+}
+
+.user-options a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+}
+
+.user-options a i {
+  font-size: 30px;
+  color: white;
+}
+  
+ 
+  .sobre-section {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sobre-section h2 {
+    color: #E53935; 
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .sobre-section p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  .sobre-imagens {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+  }
+  
+  .sobre-imagens img {
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  footer {
+    background-color: #D62828; 
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.1em;
+  }
+  

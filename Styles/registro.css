@@ -1,0 +1,214 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Tema claro (padrão) */
+  body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Tema escuro */
+  body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  /* Estilos do formulário no tema escuro */
+  body.dark-theme .form-container {
+    background-color: #121212; /* Fundo escuro */
+    color: #ffffff; /* Texto claro */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Sombra leve */
+  }
+  
+  body.dark-theme .form-content h2 {
+    color: #ff6f61; /* Destaque para títulos */
+  }
+  
+  body.dark-theme .form-content label {
+    color: #dddddd; /* Cor clara para labels */
+  }
+  
+  body.dark-theme .form-content input {
+    background-color: #333333; /* Fundo do campo de entrada */
+    color: #ffffff; /* Texto claro */
+    border: 1px solid #555555; /* Bordas suaves */
+  }
+  
+  body.dark-theme .form-content input::placeholder {
+    color: #aaaaaa; /* Texto de placeholder */
+  }
+  
+  body.dark-theme button {
+    background-color: #ff6f61; /* Botão com cor de destaque */
+    color: #121212; /* Texto escuro para contraste */
+  }
+  
+  body.dark-theme button:hover {
+    background-color: #e65a50; /* Cor mais intensa ao passar o mouse */
+  }
+  
+  /* Cabeçalho */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #d62828;
+    color: white;
+  }
+  
+  /* Botão de alternar tema */
+  #theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease;
+  }
+  
+  #theme-toggle:hover {
+    transform: scale(1.1);
+  }
+    
+    .logo img {
+      max-width: 80px;
+    }
+    
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+    
+    nav ul li {
+      display: inline;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+      background-color: #C62828; 
+      border-radius: 4px;
+    }
+  
+    .user-options {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      list-style-type: none; /* Remove o marcador de lista */
+  }
+  
+  .user-options a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: bold;
+    }
+  
+  .user-options a i {
+      font-size: 30px;
+      color: white;
+  }
+  
+  
+  /* Contêiner do formulário */
+  .form-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      margin-top: 80px;
+      align-content: center;
+  }
+  
+  /* Abas de login e cadastro */
+  .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+  }
+  
+  .tabs li {
+      list-style: none;
+      margin: 0 10px;
+  }
+  
+  .tabs a {
+      color: #D62828;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: 1px solid #D62828;
+      border-radius: 4px;
+      transition: 0.3s;
+  }
+  
+  .tabs a:hover {
+      background-color: #D62828;
+      color: white;
+  }
+  
+  /* Formulários de login e cadastro */
+  .form-content {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+  
+  .form-content.active {
+      display: block;
+  }
+  
+  .form-content h2 {
+      color: #D62828;
+      margin-bottom: 20px;
+  }
+  
+  .form-content label {
+      display: block;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 5px;
+      text-align: center;
+  }
+  
+  .form-content input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+  }
+  
+  button {
+      background-color: #D62828;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  
+  button:hover {
+      background-color: #b71c1c;
+  }
