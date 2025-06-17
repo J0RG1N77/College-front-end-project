@@ -1,0 +1,335 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex; /* Habilita flexbox no body */
+    flex-direction: column; /* Organiza os filhos (header, main) em coluna */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+}
+ 
+/* Tema claro (padrão) */
+body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+ 
+/* Tema escuro */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* ------------------------------------- */
+/* ESTILOS DE TEMA ESCURO PARA O FORMULÁRIO DE CADASTRO */
+/* ATENÇÃO: Os seletores aqui foram ajustados para o .outer-container e seus filhos */
+
+body.dark-theme .outer-container { /* AFETA O CONTÊINER BRANCO PRINCIPAL DO FORMULÁRIO */
+    background-color: #1e1e1e; /* Fundo escuro mais suave para o card */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra clara */
+}
+ 
+body.dark-theme .outer-container h1 { /* TÍTULO DO CADASTRO */
+    color: #ff6f61; /* Destaque para o título */
+}
+
+body.dark-theme .textfield label { /* LABELS DOS CAMPOS */
+    color: #dddddd; /* Cor clara para labels */
+}
+ 
+body.dark-theme .textfield input,
+body.dark-theme .textfield select { /* INPUTS E SELECT */
+    background-color: #333333; /* Fundo do campo de entrada */
+    color: #ffffff; /* Texto claro */
+    border: 1px solid #555555; /* Bordas suaves */
+}
+ 
+body.dark-theme .textfield input::placeholder { /* PLACEHOLDERS */
+    color: #aaaaaa; /* Texto de placeholder */
+}
+ 
+body.dark-theme .btn-cadastro { /* BOTÃO CADASTRAR */
+    background-color: #ff6f61; /* Botão com cor de destaque */
+    color: #121212; /* Texto escuro para contraste */
+}
+ 
+body.dark-theme .btn-cadastro:hover {
+    background-color: #e65a50; /* Cor mais intensa ao passar o mouse */
+}
+/* FIM DOS ESTILOS DE TEMA ESCURO PARA O FORMULÁRIO DE CADASTRO */
+/* ------------------------------------- */
+
+/* Cabeçalho (Mantidos exatamente como no seu código original - SEM ALTERAÇÕES AQUI) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(to right, #ff0000, #0000ff);
+    color: white;
+    transition: background 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+ 
+/* Botão de alternar tema (Mantidos exatamente como no seu código original) */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease;
+}
+ 
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+    
+.logo img {
+    max-width: 80px;
+}
+    
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+    
+nav ul li {
+    display: inline;
+}
+    
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+    
+nav ul li a:hover {
+    background-color: #C62828; 
+    border-radius: 4px;
+}
+ 
+.user-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    list-style-type: none;
+}
+ 
+.user-options a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+ 
+.user-options a i {
+    font-size: 30px;
+    color: white;
+}
+ 
+/* Estilos para o contêiner principal do formulário (main-cadastro) */
+.main-cadastro {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    flex-grow: 1; /* Permite que o main ocupe todo o espaço vertical restante */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contêiner interno do formulário (o bloco branco que você vê) */
+.outer-container {
+    background-color: white; /* Fundo padrão para tema claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 650px;
+    padding: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    /* Transição para suavizar a mudança de tema */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Título do formulário de cadastro */
+.outer-container h1 {
+    color: #333; /* Cor padrão para tema claro */
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s; /* Transição para suavizar a mudança de tema */
+}
+
+/* Container do formulário (div que envolve o <form>) */
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Formulário de cadastro em si */
+#form-cadastro {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Grupo de campo e label (textfield) */
+.textfield {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.textfield label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555; /* Cor padrão para tema claro */
+    font-size: 0.95em;
+    transition: color 0.3s; /* Transição para suavizar a mudança de tema */
+}
+
+.textfield input,
+.textfield select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd; /* Borda padrão para tema claro */
+    border-radius: 6px;
+    font-size: 1em;
+    color: #333; /* Cor padrão para tema claro */
+    background-color: #f9f9f9; /* Fundo padrão para tema claro */
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s ease;
+}
+
+.textfield input:focus,
+.textfield select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.textfield input::placeholder {
+    color: #aaa; /* Cor padrão para tema claro */
+    transition: color 0.3s;
+}
+
+/* Container dos botões */
+.botoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Botão de cadastro */
+.btn-cadastro {
+    background-color: #28a745; /* Cor padrão para tema claro */
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+.btn-cadastro:hover {
+    background-color: #218838; /* Escurece o verde ao passar o mouse */
+    transform: translateY(-2px);
+}
+
+.btn-cadastro:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}
+
+/* Estilos para a mensagem de feedback */
+.feedback-message {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: none;
+}
+
+.feedback-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.feedback-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .outer-container {
+        padding: 25px;
+        margin: 20px;
+        max-width: 90%;
+    }
+
+    .outer-container h1 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .textfield input,
+    .textfield select {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+
+    .textfield label {
+        font-size: 0.9em;
+        margin-bottom: 6px;
+    }
+
+    .btn-cadastro {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .outer-container {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .outer-container h1 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+
+    .textfield input,
+    .textfield select {
+        font-size: 0.9em;
+    }
+
+    .btn-cadastro {
+        padding: 10px 15px;
+        font-size: 0.95em;
+        max-width: 100%;
+    }
+}

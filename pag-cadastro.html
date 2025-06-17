@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Link para o arquivo de estilo CSS específico para a página de cadastro -->
+    <link rel="stylesheet" href="Styles/style-cadastro.css">
+    <!-- Título da página que aparecerá na aba do navegador -->
+    <title>Bangu Store</title>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <!-- Logo da Bangu Atlético Clube -->
+        <img src="img/Bangu_escudo2.png" alt="Bangu Atlético Clube" width="80" height="auto">
+    </div>
+    <nav>
+        <ul>
+            <!-- Links de navegação para diferentes páginas do site -->
+            <li><a href="index.html">Home</a></li> <!-- Link para a página inicial -->
+            <li><a href="produtos.html">Produtos</a></li> <!-- Link para a página de produtos -->
+            <li><a href="sobre.html">Sobre</a></li> <!-- Link para a página sobre -->
+        </ul>
+    </nav>
+    <div class="user-options">
+        <!-- Link para a página de login -->
+        <a href="pag-login.html"><i class="fas fa-user"></i></a>
+        
+        <!-- Botão para alternar o tema -->
+        <button id="theme-toggle">🌙</button>
+    </div>
+</header>
+
+<!-- Container para exibir mensagens de feedback para o usuário -->
+<div id="feedback-message" class="feedback-message"></div>
+
+<!-- Espaçador para ajudar no layout -->
+<div class="spacer">
+
+   
+    </main>
+    
+</div>
+
+
+
+ <!-- Início do formulário de cadastro -->
+    <main class="main-cadastro">
+        <div class="outer-container">
+            <h1>CADASTRO</h1> <!-- Título da seção de cadastro -->
+            
+            <div class="form-container">
+                <!-- Formulário de cadastro -->
+                <form id="form-cadastro">
+                    <div class="textfield">
+                        <!-- Campo para o nome completo -->
+                        <label for="usuario">Nome Completo:</label>
+                        <input type="text" id="nome-completo" name="nome-completo" placeholder="Ex: Adyson oliveira" required>
+                    
+                        <!-- Campo para a data de nascimento -->
+                        <label for="data de nascimento">Data de nascimento:</label>
+                        <input type="date" id="data-nascimento" name="data de nascimento" required>
+                        
+                        <!-- Campo para selecionar o sexo -->
+                        <label for="sexo">Sexo:</label>
+                        <select name="sexo" id="sexo" required>
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="NI">Não Informar</option>
+                        </select>
+                        
+                        <!-- Campo para o nome materno -->
+                        <label for="nome materno">Nome Materno:</label>
+                        <input type="text" id="nome-materno" name="nome materno" placeholder="Ex: Mamãe da Silva" required>
+                        
+                        <!-- Campo para o CPF -->
+                        <label for="senha">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="Ex: 000.000.000-00" required>
+                        
+                        <!-- Campo para o celular -->
+                        <label for="celular">Celular:</label>
+                        <input type="text" id="celular" name="celular" placeholder="Ex: (21) 99999-9999" required>
+                        
+                        <!-- Campo para o telefone fixo -->
+                        <label for="telefone fixo">Telefone Fixo:</label>
+                        <input type="text" id="telefone-fixo" name="telefone-fixo" placeholder="Ex: (21) 9999-9999" required>
+                        
+                        <!-- Campo para o endereço completo -->
+                        <label for="endereço completo">Endereço Completo:</label>
+                        <input type="text" id="endereco" name="endereco completo" placeholder="Ex: Rua ...,123" required>
+                        
+                        <!-- Campo para o login do usuário -->
+                        <label for="login">Login:</label>
+                        <input type="text" id="login" name="login" placeholder="Ex: Jorge" required>
+                        
+                        <!-- Campo para a senha do usuário -->
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" placeholder="Ex: 12345678" required>
+                        
+                        <!-- Campo para confirmar a senha -->
+                        <label for="confirmar-senha">Confirmar Senha:</label>
+                        <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Ex: 12345678" required>
+                        
+                    </div>
+                    <div class="botoes">
+                        <!-- Botão para enviar o formulário de cadastro -->
+                        <button type="submit" class="btn-cadastro">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Scripts para adicionar funcionalidades JavaScript -->
+            <script src="JavaScript/script-cadastro.js"></script>
+            <script src="JavaScript/script.js"></script>
+            <!--Máscaras-->
+                <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+            <script>
+                $('#celular').mask('(00) 00000-0000');
+                $('#telefone-fixo').mask('(00) 0000-0000');
+                $('#cpf').mask('000.000.000-00', {reverse: true});
+            </script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/EscudoBangu.png" type="image/x-icon">
+    <link rel="stylesheet" href="Styles/style-login.css">
+    <link rel="stylesheet" href="Styles/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Bangu Store</title>
+</head>
+<body class="login">
+    <header>
+        <div class="navbar">
+            <img src="img/Bangu_escudo2.png" alt="Bangu Atlético Clube" width="80" height="auto">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+        <div class="user-options">
+            <div id="user-status-container">
+                <a href="pag-login.html" id="login-link"><i class="fas fa-user"></i></a>
+            </div>
+            
+            <button id="theme-toggle">🌙</button>
+        </div>
+    </header>
+    <div class="main-login">
+        <div class="left-login">
+            <div class="logo">
+                <img src="img/Bangu_escudo2.png" width="200" height="200" alt="EscudoBangu">
+            </div>
+            <h1>Bangu Store <br>A moda do GIgante!</h1>
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>LOGIN</h1>
+                <div id="feedback-message" class="feedback-message"></div>
+
+                <form id="login-form">
+                    <div class="textfield">
+                        <label for="usuario">Usuário:</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="textfield">
+                        <label for="cpf">Verifique com seu CPF:</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="Ex: 000.000.000-00" required>
+                    </div>
+                    
+                    <div class="botoes">
+                        <button type="submit" class="btn-enviar">Entrar</button>
+                        <a href="pag-cadastro.html">
+                            <button type="button" id="cadastro" class="btn-cadastro">Cadastrar Novo Usuário</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('#cpf').mask('000.000.000-00', {reverse: false});
+        });
+    </script>
+    
+    <script src="JavaScript/script-login.js"></script>
+    <script src="JavaScript/script.js"></script>
+
+</body>
+</html>

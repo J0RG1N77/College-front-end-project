@@ -5,125 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bangu Store - Produtos</title>
   <link rel="stylesheet" href="Styles/produtos.css">
+  
+  <!-- Link para a biblioteca de ícones Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="Styles/carinho.css">
+  <script src="JavaScript/script.js"></script>
 
-  
-  
 </head>
+
 <body>
-  <!-- Cabeçalho -->
+
+  <!-- Cabeçalho da página -->
   <header>
     <div class="logo">
         <img src="img/Bangu_escudo2.png" alt="Bangu Atlético Clube">
     </div>
+    
+    <!-- Menu de navegação -->
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="produtos.html">Produtos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
+            <!-- Links para as páginas do site -->
+            <li><a href="index.html">Home</a></li> <!-- Link para a página inicial -->
+            <li><a href="produtos.html">Produtos</a></li> <!-- Link para a página de produtos -->
+            <li><a href="sobre.html">Sobre</a></li> <!-- Link para a página sobre -->
+              <!-- Ícone do carrinho de compras com contador -->
+        <!-- Carrinho no cabeçalho -->
+          <div class="cart-container">
+            <button id="cart-button">
+              <i class="fas fa-shopping-cart"></i>
+              <span id="cart-count">0</span>
+            </button>
+            <div id="cart-dropdown" class="cart-dropdown hidden">
+              
+              <ul id="cart-items"></ul>
+              <p><strong>Total: R$ <span id="cart-total">0.00</span></strong></p>
+              <a href="erro.html">
+                <button class="finalize-purchase">Finalizar compra</button>
+              </a>
+            </div>
+          </div>
+
         </ul>
     </nav>
-    <div class="user-options">
-        <li><a href="loginrooubado.html"><i class="fas fa-user"></i></a></li>
-        <a href="carrinho.html" id="abrir-carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-        <button id="theme-toggle">🌙</button>
-    </div>
     
-</header>
-
-
-
-   </header>  
+    <!-- Opções de usuário -->
+    <div class="user-options">
+        <div id="user-status-container">
+        <button id="theme-toggle">🌙</button>
+        <!-- Ícone de login para a página de login -->
+        <li><a href="pag-login.html"><i class="fas fa-user"></i></a></li>
+        
+    </div>
+  </header>
 
   <!-- Seção de Produtos -->
   <section class="produtos">
-    <h2>Nossos Produtos</h2>
+    <h2>Nossos Produtos</h2> <!-- Título da seção de produtos -->
+    
+    <!-- Grid de produtos -->
     <div class="grid-produtos">
+      
+      <!-- Produto 1 -->
       <div class="produto" data-id="1">
         <img src="img/ImagensSemFundo/camisa kombat masculina.png" alt="Camisa Oficial 1">
         <h3>CAMISA OFICIAL BANGU 24 KOMBAT MASCULINA</h3>
         <p>R$ 249,99</p>
         <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
+      
+      <!-- Produto 2 -->
       <div class="produto" data-id="2">
         <img src="img/ImagensSemFundo/CamisaGoleiro-Photoroom.png" alt="Camisa Oficial 2">
         <h3>CAMISA TREINO GOLEIRO BANGU ROXO - KAPPA</h3>
         <p>R$ 199,99</p>
         <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
+      
+      <!-- Produto 3 -->
       <div class="produto" data-id="3">
         <img src="img/ImagensSemFundo/CamisaBanguBranca.png" alt="Camisa Oficial 3">
         <h3>CAMISA KOMBAT BANGU II BRANCA - KAPPA</h3>
         <p>R$ 249,99</p>
         <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
-      <div class="produto" data-id="4">
-        <img src="img/regataBangu.webp" alt="Camisa Oficial 4">
-        <h3>REGATA SUPPORTER HOME BANGU LISTRADA</h3>
-        <p>R$ 100,00</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
-      <div class="produto" data-id="5">
-        <img src="img/ImagensSemFundo/RegataAzul.png" alt="Camisa Oficial 5">
-        <h3>REGATA TREINO ATLETAS BANGU - KAPPA</h3>
-        <p>R$ 100,00</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
-      <div class="produto" data-id="6">
-        <img src="img/RegataBangu3.webp" alt="Camisa Oficial 6">
-        <h3>REGATA HOME BASQUETE BANGU BRANCA</h3>
-        <p>R$ 120,00</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
-      <div class="produto" data-id="7">
-        <img src="img/ImagensSemFundo/CalçaBangu.png" alt="Camisa Oficial 7">
-        <h3>CALÇA COMISSÃO BANGU - KAPPA</h3>
-        <p>R$ 150,00</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
+      
+      <!-- Produto 4 -->
       <div class="produto" data-id="3">
         <img src="img/ImagensSemFundo/bermudaviagem-Photoroom.png" alt="Camisa Oficial 3">
         <h3>BERMUDA VIAGEM ATLETA BANGU - KAPPA</h3>
         <p>R$ 100,00</p>
         <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
-      <div class="produto" data-id="8">
-        <img src="img/BoneBangu.webp" alt="Camisa Oficial 8">
-        <h3>BONÉ FIVE PANEL BANGU OFF WHITE</h3>
-        <p>R$ 89,00</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
+     
+      <!-- Produto 5 -->
       <div class="produto" data-id="8">
         <img src="img/croppedkombatBangu.webp" alt="Camisa Oficial 9">
         <h3>CROPPED KOMBAT BANGU 24 BRANCO - KAPPA</h3>
         <p>R$149,00</p>
         <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
-      <div class="produto" data-id="8">
-        <img src="img/CopotermicoBangu.webp" alt="Camisa Oficial 10">
-        <h3>COPO TÉRMICO COM TAMPA E ABRIDOR BRANCO</h3>
-        <p>R$69,00</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
-      <div class="produto" data-id="8">
-        <img src="img/kitifantilBangu.webp" alt="Camisa Oficial 11">
-        <h3>KIT INFANTIL SUPPORTER BANGU - CALÇÃO + CAMISA</h3>
-        <p>R$199,00</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
-      <div class="produto" data-id="8">
-        <img src="img/abridorchaveiroBangu.webp" alt="Camisa Oficial 12">
-        <h3>ABRIDOR CHAVEIRO LOGO MOSQUETÃO</h3>
-        <p>R$16,99</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
-      <div class="produto" data-id="8">
-        <img src="img/CasacoBangu.webp" alt="Camisa Oficial 13">
-        <h3>BLUSÃO COMISSÃO TÉCNICA BANGU - KAPPA</h3>
-        <p>R$169,00</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
+
+      <!-- Produto 6 -->
       <div class="produto" data-id="8">
         <img src="img/CamisaGoleiroVerdeaguaBangu.webp" alt="Camisa Oficial 14">
         <h3>CAMISA GOLEIRO BANGU VERDE ÁGUA - KAPPA</h3>
@@ -131,26 +113,29 @@
         <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
 
-      <!-- Adicione mais produtos -->
+      <!-- Mais produtos podem ser adicionados aqui -->
     </div>
   </section>
   
-  <!-- Modal do Carrinho -->
-  <div id="carrinho-modal" class="modal">
-    <i class="fa-solid fa-cart-shopping"></i>
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Itens no Carrinho</h2>
-      <div id="itens-carrinho"></div>
-      <div id="total-carrinho"></div>
-    </div>
-  </div>
+  <!-- Modal do Carrinho (não implementado no código fornecido) -->
 
   <!-- Rodapé -->
   <footer>
     <p>&copy; 2024 Bangu Store. Todos os direitos reservados.</p>
+    
+    <!-- Logo do Bangu Atlético Clube -->
+    <img src="img/logo-1701858752-1719005234-37cf381cc5c27eb83f33c1b2094320a91719005235-320-0.webp" alt="Bangu Atlético Clube" width="80" height="auto">
+    
+    <!-- Informações de contato -->
+    <div class="contato">
+      <p>Estamos à disposição para atender você!</p>
+      <!-- Link para o WhatsApp -->
+      <li><a href="https://wa.me/+5521989496516?text=MENSAGEM" target="_blank">21989496516</a></li>
+      <!-- Link para o email -->
+      <p><a href="mailto:bangustore7@gmail.com">bangustore7@gmail.com</a></p>
+    </div>
   </footer>
 
-  <script src="JavaScript/script.js"></script>
+
 </body>
 </html>

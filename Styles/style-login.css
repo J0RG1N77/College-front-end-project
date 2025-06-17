@@ -1,0 +1,293 @@
+/* Estilos Globais */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Tema Claro com Degradê */
+.light-theme {
+    background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    color: #333;
+}
+
+/* Tema Escuro */
+.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-theme a,
+.dark-theme p,
+.dark-theme span,
+.dark-theme label {
+    color: #e0e0e0 !important;
+}
+
+/* Tela de Login */
+.main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to bottom, #d62828, #ff5f5f);
+    transition: background 0.3s ease;
+    flex-direction: column;
+}
+
+.dark-theme .main-login {
+    background: linear-gradient(to bottom, #1a1a1a, #333);
+}
+
+.main-login > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-direction: column;
+}
+
+/* Left Login */
+.left-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 32px;
+    color: #fff;
+}
+
+.left-login h1 {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Right Login */
+.right-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card de Login */
+.card-login {
+    width: 100%;
+    max-width: 400px;
+    background: #fefefe;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-theme .card-login {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.card-login h1 {
+    color: #d62828;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Campos de Entrada */
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.textfield input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-theme .textfield input {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #e0e0e0;
+}
+
+.textfield input:focus {
+    background-color: #ffffff;
+    border-color: #d62828;
+    outline: none;
+}
+
+.dark-theme .textfield input:focus {
+    background-color: #333;
+    border-color: #ff4444;
+}
+
+.textfield label {
+    font-size: 14px;
+    color: #555;
+}
+
+.dark-theme .textfield label {
+    color: #bbb;
+}
+
+/* Botões */
+.btn-enviar,
+.btn-cadastro {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #d62828;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-enviar:hover,
+.btn-cadastro:hover {
+    background-color: #a91c1c;
+    transform: translateY(-2px);
+}
+
+.btn-enviar:disabled,
+.btn-cadastro:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Feedback */
+.feedback-message {
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.feedback-message.error {
+    background-color: #d62828;
+    color: #fff;
+}
+
+.feedback-message.success {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 950px) {
+    .card-login {
+        width: 85%;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-login {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-login,
+    .right-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .logo img {
+        max-width: 150px;
+    }
+}
+
+/* Header com Degradê no Claro e Escuro */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(to right, #d62828, #0000ff);
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.dark-theme header {
+    background: linear-gradient(to right, #1a1a1a, #333333);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Navegação */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #c62828;
+    border-radius: 4px;
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-options a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.user-options a i {
+    font-size: 30px;
+}
