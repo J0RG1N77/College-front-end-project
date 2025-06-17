@@ -10,8 +10,13 @@ Navegação e Layout Responsivo: Páginas bem estruturadas com um cabeçalho fix
 Alternância de Tema: Opção de alternar entre tema claro e escuro, com preferência persistente via localStorage, proporcionando conforto visual ao usuário.
 Efeitos Visuais Interativos: Animação de zoom em imagens de produtos ao passar o mouse.
 Tecnologias Utilizadas:
+
 HTML5: Estrutura semântica das páginas.
+
 CSS3: Estilização e design responsivo, incluindo manipulação de temas.
+
 JavaScript (Vanilla JS): Lógica de frontend para todas as funcionalidades interativas, manipulação do DOM e gestão do localStorage.
+
 jQuery: Utilizado em conjunto com o jQuery Mask Plugin para formatação automática de campos como CPF e telefones.
+
 Font Awesome: Para ícones visuais (usuário, carrinho, etc.).
