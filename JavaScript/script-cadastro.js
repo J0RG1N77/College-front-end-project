@@ -10,7 +10,6 @@ function mostrarFeedback(mensagem, tipo) {
 
     setTimeout(() => {
         feedbackMessage.style.display = 'none';
-        feedbackMessage.textContent = ''; // Limpa a mensagem após esconder
     }, 3000);
 }
 
@@ -22,8 +21,7 @@ function validarNome(nome) {
 
 // Validação para CPF (com ou sem pontuação)
 function validarCPF(cpf) {
-    // Regex para validar o formato com ou sem pontuação
-    const cpfRegex = /^(?:\d{3}\.\d{3}\.\d{3}-\d{2}|\d{11})$/;
+    const cpfRegex = /^(?:\d{3}\.\d{3}\.\d{3}-\d{2}|\d{11})$/; // Permite CPF com ou sem pontuação
     return cpfRegex.test(cpf);
 }
 
@@ -51,16 +49,74 @@ function validarSenha(senha) {
     return senhaRegex.test(senha);
 }
 
-// Função para validar e processar o formulário de cadastro
+// Função para validar o formulário de cadastro
 function validarCadastro() {
     const nomeCompleto = document.getElementById('nome-completo').value.trim();
-    const cpfInput = document.getElementById('cpf'); // Pega o elemento input do CPF
-    const cpf = cpfInput.value.trim(); // Pega o valor do CPF (com máscara)
+    const cpf = document.getElementById('cpf').value.trim();
     const celular = document.getElementById('celular').value.trim();
     const telefonefixo = document.getElementById('telefone-fixo').value.trim();
     const login = document.getElementById('login').value.trim();
     const senha = document.getElementById('senha').value.trim();
     const confirmarSenha = document.getElementById('confirmar-senha').value.trim();
+
+    // 1.0 - Cria um objeto usuario com os valores provenientes de cada id
+    const usuario = {
+        nomeCompleto: nomeCompleto,
+        cpf: cpf,
+        telefoneCelular: celular,
+        telefoneFixo: telefonefixo,
+        login: login,
+        senha: senha,
+        confirmaSenha: confirmarSenha
+    };
+
+
+// Máscara CPF
+function maskCPF(value) {
+  return value
+    .replace(/\D/g, '')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+}
+// Máscara Celular (21) 99999-9999
+function maskCelular(value) {
+  return value
+    .replace(/\D/g, '')
+    .replace(/(\d{2})(\d)/, '($1) $2')
+    .replace(/(\d{5})(\d)/, '$1-$2')
+    .replace(/(-\d{4})\d+?$/, '$1');
+}
+// Máscara Telefone Fixo (21) 9999-9999
+function maskFixo(value) {
+  return value
+    .replace(/\D/g, '')
+    .replace(/(\d{2})(\d)/, '($1) $2')
+    .replace(/(\d{4})(\d)/, '$1-$2')
+    .replace(/(-\d{4})\d+?$/, '$1');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const cpf = document.getElementById('cpf');
+  const celular = document.getElementById('celular');
+  const fixo = document.getElementById('telefone-fixo');
+  if (cpf) {
+    cpf.addEventListener('input', function(e) {
+      this.value = maskCPF(this.value);
+    });
+  }
+  if (celular) {
+    celular.addEventListener('input', function(e) {
+      this.value = maskCelular(this.value);
+    });
+  }
+  if (fixo) {
+    fixo.addEventListener('input', function(e) {
+      this.value = maskFixo(this.value);
+    });
+  }
+});
+
 
     // Validação do nome
     if (!validarNome(nomeCompleto)) {
@@ -69,14 +125,14 @@ function validarCadastro() {
     }
 
     // Validação do CPF
-    if (!validarCPF(cpf)) { // Aqui valida o formato com ou sem pontuação
+    if (!validarCPF(cpf)) {
         mostrarFeedback('O CPF deve ser válido, com ou sem pontuação.', 'error');
         return false;
     }
 
     // Validação do celular
     if (!validarCelular(celular)) {
-        mostrarFeedback('O celular deve estar no formato (XX) XXXXX-XXXX ou XX XXXXX-XXXX.', 'error');
+        mostrarFeedback('O celular deve estar no formato (XX) XXXX-XXXX ou (XX) XXXXX-XXXX.', 'error');
         return false;
     }
 
@@ -104,22 +160,8 @@ function validarCadastro() {
         return false;
     }
 
-    // 1.0 - Cria um objeto usuario com os valores provenientes de cada id
-    // IMPORTANTE: Removemos a máscara do CPF antes de salvar
-    const usuario = {
-        nomeCompleto: nomeCompleto,
-        cpf: cpf.replace(/\D/g, ''), // CPF SALVO SEM MÁSCARA!
-        telefoneCelular: celular.replace(/\D/g, ''), // Boa prática: salvar sem máscara também
-        telefoneFixo: telefonefixo.replace(/\D/g, ''), // Boa prática: salvar sem máscara também
-        login: login,
-        senha: senha,
-        // confirmaSenha: confirmarSenha // Opcional: geralmente não se salva confirmaSenha, apenas a senha
-    };
-
     // Armazenar o objeto usuario no localStorage
     localStorage.setItem('usuario', JSON.stringify(usuario));
-
-    console.log('Dados do usuário salvos no localStorage:', usuario); // Para depuração
 
     return true;
 }
@@ -129,6 +171,13 @@ formCadastro.addEventListener('submit', (event) => {
     event.preventDefault();
 
     if (validarCadastro()) {
+        const login = document.getElementById('login').value.trim();
+        const senha = document.getElementById('senha').value.trim();
+
+        // Função para salvar login e senha (opcional)
+        localStorage.setItem('login', login);
+        localStorage.setItem('senha', senha);
+
         mostrarFeedback('Usuário cadastrado com sucesso!', 'success');
 
         // Redirecionar para a página de login após o cadastro

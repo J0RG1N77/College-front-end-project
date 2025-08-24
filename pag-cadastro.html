@@ -6,6 +6,7 @@
     <!-- Título da página que aparecerá na aba do navegador -->
     <title>Bangu Store</title>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <body>
 
@@ -20,14 +21,13 @@
             <li><a href="index.html">Home</a></li> <!-- Link para a página inicial -->
             <li><a href="produtos.html">Produtos</a></li> <!-- Link para a página de produtos -->
             <li><a href="sobre.html">Sobre</a></li> <!-- Link para a página sobre -->
+            <li><a href="resultados.html">Resultados</a></li>
         </ul>
     </nav>
+    
     <div class="user-options">
-        <!-- Link para a página de login -->
-        <a href="pag-login.html"><i class="fas fa-user"></i></a>
-        
-        <!-- Botão para alternar o tema -->
-        <button id="theme-toggle">🌙</button>
+      <a href="pag-login.html"><i class="fas fa-user"></i></a>
+      <button id="theme-toggle">🌙</button>
     </div>
 </header>
 
@@ -37,14 +37,7 @@
 <!-- Espaçador para ajudar no layout -->
 <div class="spacer">
 
-   
-    </main>
-    
-</div>
-
-
-
- <!-- Início do formulário de cadastro -->
+    <!-- Início do formulário de cadastro -->
     <main class="main-cadastro">
         <div class="outer-container">
             <h1>CADASTRO</h1> <!-- Título da seção de cadastro -->
@@ -110,16 +103,61 @@
                 </form>
             </div>
         </div>
-        <!-- Scripts para adicionar funcionalidades JavaScript -->
-            <script src="JavaScript/script-cadastro.js"></script>
-            <script src="JavaScript/script.js"></script>
-            <!--Máscaras-->
-                <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
-            <script>
-                $('#celular').mask('(00) 00000-0000');
-                $('#telefone-fixo').mask('(00) 0000-0000');
-                $('#cpf').mask('000.000.000-00', {reverse: true});
-            </script>
-    </body>
+    </main>
+    
+</div>
+
+
+<!-- Scripts para adicionar funcionalidades JavaScript -->
+<script src="JavaScript/script-cadastro.js"></script>
+<script src="JavaScript/script.js"></script>
+<script>
+// Máscara CPF
+function maskCPF(value) {
+  return value
+    .replace(/\D/g, '')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+}
+// Máscara Celular (21) 99999-9999
+function maskCelular(value) {
+  return value
+    .replace(/\D/g, '')
+    .replace(/(\d{2})(\d)/, '($1) $2')
+    .replace(/(\d{5})(\d)/, '$1-$2')
+    .replace(/(-\d{4})\d+?$/, '$1');
+}
+// Máscara Telefone Fixo (21) 9999-9999
+function maskFixo(value) {
+  return value
+    .replace(/\D/g, '')
+    .replace(/(\d{2})(\d)/, '($1) $2')
+    .replace(/(\d{4})(\d)/, '$1-$2')
+    .replace(/(-\d{4})\d+?$/, '$1');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const cpf = document.getElementById('cpf');
+  const celular = document.getElementById('celular');
+  const fixo = document.getElementById('telefone-fixo');
+  if (cpf) {
+    cpf.addEventListener('input', function(e) {
+      this.value = maskCPF(this.value);
+    });
+  }
+  if (celular) {
+    celular.addEventListener('input', function(e) {
+      this.value = maskCelular(this.value);
+    });
+  }
+  if (fixo) {
+    fixo.addEventListener('input', function(e) {
+      this.value = maskFixo(this.value);
+    });
+  }
+});
+</script>
+
+</body>
 </html>

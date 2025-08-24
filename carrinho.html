@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bangu Store - Carrinho</title>
+
+  <!-- Seus CSS -->
+  <link rel="stylesheet" href="Styles/produtos.css" />
+  <link rel="stylesheet" href="Styles/carinho.css" />
+  <link rel="stylesheet" href="Styles/carrossel.css">
+  <link rel="stylesheet" href="Styles/finalizarcompra.css">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+
+  <!-- =========================
+       Cabeçalho
+       ========================= -->
+  <header>
+    <div class="logo">
+      <img src="img/Bangu_escudo2.png" alt="Bangu Atlético Clube" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="resultados.html">Resultados</a></li>
+        <li>
+          <div class="cart-container">
+            <button id="cart-button">
+              <i class="fas fa-shopping-cart"></i>
+              <span id="cart-count">0</span>
+            </button>
+            <div id="cart-dropdown" class="cart-dropdown hidden">
+              <ul id="cart-items"></ul>
+              <p><strong>Total: R$ <span id="cart-total">0.00</span></strong></p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="user-options">
+      <a href="pag-login.html"><i class="fas fa-user"></i></a>
+      <button id="theme-toggle">🌙</button>
+    </div>
+  </header>
+
+  <!-- =========================
+       Carrinho
+       ========================= -->
+  <main class="carrinho-container">
+    <div class="carrinho-header">
+      <h1 class="carrinho-title">Meu Carrinho</h1>        
+    </div>    
+
+    <!-- Etapas -->
+    <div class="steps">
+      <!-- Etapa Loja (ativa) -->
+      <div class="step active">
+        <div class="icon">🏬</div>
+        <span>Loja</span>
+      </div>
+
+      <div class="line"></div>
+
+      <!-- Etapa Casa -->
+      <div class="step">
+        <div class="icon">🏠</div>
+        <span>Sua Casa</span>
+      </div>
+    </div>
+
+    <!-- Conteúdo do carrinho -->
+    <div class="carrinho-content">
+      <div class="carrinho-items" id="carrinho-itens-js">
+        <!-- Itens reais do carrinho aparecerão aqui via JS -->
+      </div>      
+
+      <div class="carrinho-summary">
+        <h3 class="summary-title">Resumo do Pedido</h3>
+
+        <!-- Campos de cupom e CEP -->
+        <div style="display:flex;gap:32px;flex-wrap:wrap;margin-bottom:20px;">
+          <div>
+            <label for="campo-cep" style="font-weight:bold;">Calcule o Frete:</label>
+            <div style="display:flex;gap:8px;">
+              <input type="text" id="campo-cep" placeholder="Digite seu CEP" style="width:120px;">
+              <button type="button" id="calcular-frete">Calcular</button>
+              <button type="button" id="limpar-frete">Limpar</button>
+            </div>
+            <span id="cep-msg" style="color:#009688;font-size:13px;display:block;margin-top:6px;"></span>
+          </div>
+        </div>
+
+        <div class="summary-row">
+          <span class="summary-label">Subtotal (<span id="qtd-itens">0</span> itens)</span>
+          <span class="summary-value" id="subtotal-carrinho">R$ 0,00</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Frete</span>
+          <span class="summary-value" id="frete-carrinho">R$ 25,00</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Descontos</span>
+          <span class="summary-value" id="desconto-carrinho">R$ 0,00</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span id="total-carrinho">R$ 0,00</span>
+        </div>
+
+        <button class="checkout-btn" id="finalizar-compra">Finalizar Compra</button>
+        <a href="produtos.html" class="continue-shopping">Continuar comprando</a>
+
+        <!-- Campo de cupom -->
+        <div class="campo-cupom">
+          <label for="campo-cupom" style="font-weight:bold;">Cupom:</label>
+          <div style="display:flex;gap:8px;">
+            <input type="text" id="campo-cupom" placeholder="Digite o cupom" style="width:120px;">
+            <button type="button" id="aplicar-cupom">Aplicar</button>
+            <span id="cupom-msg" style="color:#009688;font-size:13px;"></span>
+            <button type="button" id="remover-cupom" style="display:none;margin-left:8px;">Remover</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================
+       Footer
+       ========================= -->
+  <footer>
+    <p>&copy; 2024 Bangu Store. Todos os direitos reservados.</p>
+    <img src="img/logo-1701858752-1719005234-37cf381cc5c27eb83f33c1b2094320a91719005235-320-0.webp" alt="Bangu Atlético Clube" width="80" height="auto" />
+    <div class="contato">
+      <p>Estamos à disposição para atender você!</p>
+      <p><a href="https://wa.me/+5521989496516?text=MENSAGEM" target="_blank">21989496516</a></p>
+      <p><a href="mailto:bangustore7@gmail.com">bangustore7@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <!-- =========================
+       Scripts
+       ========================= -->
+  <!-- =========================
+       Scripts
+       ========================= -->
+  
+  <script src="JavaScript/"></script>
+  <script src="JavaScript/script.js"></script>
+  <script src="JavaScript/finalizarcompra.js"></script>
+
+</body>
+</html>
+</html>
